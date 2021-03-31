@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>QuizzTogether - Salle d'Attente</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .reponse{
+            background-color: rgba(218, 214, 214, 0.39);
+            display: flex;
+    margin: 82px auto 32px;
+    padding: 16px 16px;
+    max-width: 960px;
+    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36.5vh; /* poussé de la moitié de hauteur de viewport */
+    transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+    font-size:200%;
+    text-align: center;
+    position: relative;
+    top:100px;
+        }
+        .propositions {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+.propositions li {
+  width:40%;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 1em 0;
+  height: 4em;
+  border-radius: 4px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.propositions li p{
+margin-top: 8%;
+}
+
+.propositions li:nth-child(1){
+    background-color: rgb(242, 116, 145);
+}
+
+.propositions li:nth-child(2){
+    background-color: rgb(153, 214, 181);
+}
+
+.propositions li:nth-child(3){
+    background-color: rgb(247, 212, 81);
+}
+
+.propositions li:nth-child(4){
+    background-color: rgb(127, 91, 142);
+}
+.timer{position: fixed;
+bottom: 0px;
+background-color: white;
+border-radius: 160px;
+}
+
+.disabled li{
+    cursor:not-allowed !important;
+    
+}
+.disabled li:nth-child(1){
+    background-color: rgb(242, 166, 195);
+}
+
+.disabled li:nth-child(2){
+    background-color: rgb(203, 231, 211);
+}
+
+.disabled li:nth-child(3){
+    background-color: rgb(237, 247, 181);
+}
+
+.disabled li:nth-child(4){
+    background-color: rgb(194, 167, 207);
+}
+.score{
+    position: fixed;
+    bottom:5%;
+    color: black;
+}
+    </style>
+</head>
+  <div class="reponse" role="main">    
+    <h1></h1>
+        <ul id="propositions" #propositions class="propositions">
+            <li id="1" (click)="answer(1, propositions)">
+              <p c>A</p>
+            </li>
+            <li id="2" (click)="answer(2, propositions)">
+              <p>B</p>
+            </li>
+            <li id="3" (click)="answer(3, propositions)">
+              <p>C</p>
+            </li>
+            <li id="4" (click)="answer(4, propositions)">
+              <p>D</p>
+            </li>
+          </ul>
+  </div>
+  <h1 class="score">Points : {{points}}</h1>
+</html>
